@@ -1,0 +1,6 @@
+{% extends 'layouts/base.html' %}
+{% block title %}{{ block.super }} - About{% endblock %}
+{% block content %}
+	<h1>About the RoryApp</h1>
+	<p id="paragraph">This web app will present a fun way to experiment with reinforcement learning algorithms. Rory the Robot is a faulty robot an must learn his way to a goal square on a grid, avoiding deadly pits! Rory uses the q-learning algorithm to find the best action to take at each square of the board. However... Rory is faulty, there's no telling where he'll end up!</p>
+{% endblock %}

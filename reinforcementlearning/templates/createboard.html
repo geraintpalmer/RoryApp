@@ -1,0 +1,14 @@
+{% extends 'layouts/base.html' %}
+{% block title %}{{ block.super }} - Create{% endblock %}
+{% block content %}
+	<h1>Create Own Board</h1>
+	<p>Create own board here...</p>
+	<form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+    <br>
+    <br>
+    <br>
+    <br>
+{% endblock %}

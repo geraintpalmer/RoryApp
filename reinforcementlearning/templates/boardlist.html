@@ -1,0 +1,12 @@
+{% extends 'layouts/base.html' %}
+{% block title %}{{ block.super }} - Board List{% endblock %}
+{% block content %}
+	<h1>List of Standard Game Boards</h1>
+	<p> Click on one of the game boards below to see Rory learn.</p>
+	<hr>
+	<p id="listgames">
+	{% for game in gameboards %}
+		<a id="gamelinks" href="{{ game.slug }}"> {{ game.name }} </a><br>
+	{% endfor %}
+	</p>
+{% endblock %}

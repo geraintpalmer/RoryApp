@@ -1,0 +1,15 @@
+{% extends 'layouts/base.html' %}
+{% block title %}{{ block.super }} - Reinforcement Learning{% endblock %}
+{% block content %}
+{% load mathjax %}
+	<h1>Reinforcement Learning</h1>
+	<p id="paragraph">
+		{% mathjax_scripts %}
+		Reinforcement learning is a type of machine learning in which a series of <i>agents</i> that interact with an <i>environment</i> in order to maximise their <i>reward</i>. The agents observe a set of <i>states</i> and carry out a series of <i>actions</i>.
+    	$$1+1=2$$
+    </p>
+    <h3>The <i>Q-Learning</i> Algorithm</h3>
+    <p id="paragraph">
+    	In the <i>Q-learning</i> algorithm the agent attempts to determine the best action to take for each state the agent may be in.
+    </p>
+{% endblock %}

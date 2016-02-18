@@ -1,0 +1,51 @@
+{% extends 'layouts/base.html' %}
+{% block title %}{{ block.super }} - Results{% endblock %}
+{% block content %}
+	<h1>RoryApp - Results</h1>
+	
+	<div style="float:left; width:75%;">
+	
+	<table id="results2" class="resultstable">
+		{% for r in BoardGame.results_to_show.values %}
+		<tr>
+  			{% for c in r.values %}
+  				{% if c.0 == 'G' %}
+  					<td id='cells2' style="background-color:#FFE000">{{ c.0 }}</td>
+  				{% elif c.0 == 'D' %}
+  					<td id='cells2' style="background-color:#FF4719">{{ c.0 }}</td>
+  				{% elif c.1 == start_x and c.2 == start_y %}
+  					<td id='cells2' style="background-color:#FFE000"><a id="resultslinks" target="_blank" href="{{ c.1 }}/{{ c.2 }}">{{ c.0 }}</a></td>
+  				{% else %}
+  					<td id='cells2'><a id="resultslinks" target="_blank" href="{{ c.1 }}/{{ c.2 }}">{{ c.0 }}</a></td>
+  				{% endif %}
+    		{% endfor %}
+    	</tr>
+	    {% endfor %}
+	</table>
+	<p>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+	</p>
+</div>
+	<div style="float:rightl width:25%;">
+		<p>
+			Robot parameters:
+			<ul>
+				<li>Success rate: {{ gameboard.success_rate }}</li>
+				<li>Learning rate: {{ gameboard.learning_rate }}</li>
+				<li>Discount rate: {{ gameboard.discount_rate }}</li>
+				<li>Action Selection Parameter: {{ gameboard.action_selection_parameter }}</li>
+				<li>Starting Position: ({{ gameboard.start_x }}, {{ gameboard.start_y }})</li>
+				<li>Number of Episodes: {{ gameboard.number_of_episodes }}</li>
+			</ul>
+		</p>
+		<br>
+		<br>
+		<form action={{ back_to_this_page }}>
+			<button class="button">Re-Learn</button>
+		</form>
+	</div>
+{% endblock %}

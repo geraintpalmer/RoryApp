@@ -1,0 +1,25 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+<head>
+	<title>
+		{% block title %}RoryApp{% endblock %}
+	</title>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+	{% block header %}{% endblock %}
+</head>
+<body>
+	{% block content %}{% endblock %}
+	{% block footer %}{% endblock %}
+	<nav>
+		<hr>
+		<table style="width:100%">
+  			<tr>
+		    <td><a style="font-weight: bold" href="{% url 'home' %}">Home</a></td>
+		    <td><a style="font-weight: bold" href="{% url 'about' %}">About</a></td>		
+		    <td><a style="font-weight: bold" href="{% url 'contact' %}">Contact</a></td>
+		  </tr>
+		</table>
+	</nav>
+</body>
+</html>

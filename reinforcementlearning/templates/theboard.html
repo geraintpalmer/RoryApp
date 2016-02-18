@@ -1,0 +1,51 @@
+{% extends 'layouts/base.html' %}
+{% block title %}{{ block.super }} - The Board{% endblock %}
+{% block content %}
+	<h1>RoryApp - The Board</h1>
+	<body>
+
+		<div style="float:left; width:75%;">
+
+		<table id="results1">
+			{% for r in BoardGame.board_to_show.values %}
+			<tr>
+	  			{% for c in r.values %}
+	  				{% if c == ' ' %}
+	  					<td id="cells1">&nbsp;</td>
+	  				{% else %}
+	    				<td id="cells1">{{ c }}</td>
+	    			{% endif %}
+	    		{% endfor %}
+	    	</tr>
+		    {% endfor %}
+		</table>
+
+		<p>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+		</p>
+	</div>
+	<div style="float:rightl width:25%;">
+		<p>
+			Robot parameters:
+			<ul>
+				<li>Success rate: {{ gameboard.success_rate }}</li>
+				<li>Learning rate: {{ gameboard.learning_rate }}</li>
+				<li>Discount rate: {{ gameboard.discount_rate }}</li>
+				<li>Action Selection Parameter: {{ gameboard.action_selection_parameter }}</li>
+				<li>Starting Position: ({{ gameboard.start_x }}, {{ gameboard.start_y }})</li>
+				<li>Number of Episodes: {{ gameboard.number_of_episodes }}</li>
+			</ul>
+			<br>
+			<br>
+			<form action= "results">
+				<button class="button">Make Rory Learn!</button>
+			</form>
+		</p>
+	</div>
+
+	</body>
+{% endblock %}

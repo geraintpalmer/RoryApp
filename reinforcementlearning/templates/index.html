@@ -1,0 +1,21 @@
+{% extends 'layouts/base.html' %}
+{% block title %}{{ block.super }} - Home{% endblock %}
+{% block content %}
+	<h1>Welcome to the RoryApp!</h1>
+	<p>
+		<table id="contents" class="contentstable">
+			<tr>
+				<td id='contentcells' style="background-color: #FFAE19;"><a href="{% url 'RL' %}">Reinforcement Learning</a></td>
+				<td id='contentcells' style="background-color: #FEC105;"><a href="{% url 'explanation' %}">Game Explanation</a></td>
+				<td id='contentcells' style="background-color: #FFAE19;"><a href="{% url 'createboard' %}">Create Board</a></td>
+			</tr>
+
+			<tr>
+				<td id='contentcells' style="background-color: #FEC105;"><a href="{% url 'links' %}">External Links</a></td>
+				<td id='contentcells' style="background-color: #FFAE19;"><a href="{% url 'boardlist' %}">List of Standard Game Boards</a></td>
+				<td id='contentcells' style="background-color: #FEC105;"><a href="{% url 'about' %}">About</a></td>
+			</tr>
+		</table>
+	</p>
+
+{% endblock %}

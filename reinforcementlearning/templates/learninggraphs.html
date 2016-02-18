@@ -1,0 +1,6 @@
+{% extends 'layouts/base.html' %}
+{% block title %}{{ block.super }} - Learning Graphs{% endblock %}
+{% block content %}
+	<h1>Learning Graph for ({{ col }}, {{ row }})</h1>
+		{{ data.graph | safe }}
+{% endblock %}
